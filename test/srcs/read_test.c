@@ -6,7 +6,7 @@
 /*   By: cisis <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:58:39 by cisis             #+#    #+#             */
-/*   Updated: 2021/04/05 15:58:53 by cisis            ###   ########.fr       */
+/*   Updated: 2021/04/05 16:47:29 by cisis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 static int		read_stdin_test(void)
 {
-	char	buf[1000];
+	char	buf[BUFFER_SIZE];
 	int		res;
 
 	printf("%s", DELIMITER);
 	printf("TESTING STDIN READ\nPlese, type something:\n");
-	res = ft_read(0, buf, 1000);
+	res = ft_read(0, buf, BUFFER_SIZE);
 	buf[res] = '\0';
 	printf("\nWhat we have read:\n\"%s\"\n", buf);
 	printf("ft_read returned: %d\n", res);
@@ -28,14 +28,15 @@ static int		read_stdin_test(void)
 	return (0);
 }
 
-int				read_file_test(char *filename, int nbyte)
+static int		read_file_test(char *filename, int nbyte)
 {
-	char	buf[1000];
+	char	buf[BUFFER_SIZE];
 	int		res;
 	int		fd;
 
 	fd = open(filename, O_RDONLY);
 	printf("%s", DELIMITER);
+	printf("READING FROM THE FILE: %s\n", filename);
 	printf("fdes =\t%d\nnbyte =\t%d\n", fd, nbyte);
 	res = ft_read(fd, buf, nbyte);
 	printf("  -->RETURN = %d\n", res);
@@ -46,10 +47,12 @@ int				read_file_test(char *filename, int nbyte)
 	return (0);
 }
 
-int				execute_read_stdin_test(void)
+int				execute_read_test(int argc, char **argv)
 {
 	printf("===---READ TEST---===\n");
 	read_stdin_test();
+	if (argc == 3)
+		read_file_test(argv[1], atoi(argv[2]));
 	printf("=======================\n");
 	return (0);
 }

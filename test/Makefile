@@ -29,7 +29,7 @@ $(NAME):			$(OBJS) $(LIBASM)
 					gcc $(CCFLAGS) -I$(INCLUDES) -L.. -lasm $(OBJS) -o $(NAME)
 
 clean:				
-					rm -f $(OBJS)
+					rm -f $(OBJS) file_to_write
 					make clean -C ..
 
 fclean:				clean

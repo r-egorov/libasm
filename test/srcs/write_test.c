@@ -6,7 +6,7 @@
 /*   By: cisis <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 16:00:51 by cisis             #+#    #+#             */
-/*   Updated: 2021/04/05 16:01:14 by cisis            ###   ########.fr       */
+/*   Updated: 2021/04/05 16:39:13 by cisis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static int		write_test(int fd, char *buf, int nbyte)
 
 int				execute_write_test(void)
 {
+	int		fd;
+
 	printf("===---WRITE TEST---===\n");
 	write_test(1, "THIS IS WRITTEN BY FT_WRITE\n", 28);
 	printf(DELIMITER);
@@ -34,6 +36,10 @@ int				execute_write_test(void)
 	write_test(-1, "BLA BLA ERROR", 23);
 	printf(DELIMITER);
 	write_test(1, "BLA BLA ERROR", -45);
+	printf(DELIMITER);
+	fd = open("file_to_write", O_WRONLY | O_CREAT, 0666);
+	write_test(fd, "THIS FILE IS CREATED DURING TESTS "
+					"AND TEXT IS WRITTEN BY FT_WRITE", 65);
 	printf("=======================\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cisis <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:57:39 by cisis             #+#    #+#             */
-/*   Updated: 2021/04/05 15:58:05 by cisis            ###   ########.fr       */
+/*   Updated: 2021/04/05 16:48:20 by cisis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@
 # include "libasm.h"
 
 # define DELIMITER "+----------------------+\n"
+# define BUFFER_SIZE 100000
 
 int		execute_strcmp_test(void);
 int		execute_strcpy_test(void);
 int		execute_strdup_test(void);
 int		execute_strlen_test(void);
 int		execute_write_test(void);
-int		execute_read_stdin_test(void);
-int		read_file_test(char *filename, int nbyte);
+int		execute_read_test(int argc, char **argv);
 
 #endif
