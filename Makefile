@@ -4,14 +4,15 @@ INCLUDES		=	./
 SRCSDIR			=	srcs/
 MAINDIR			=	test/
 
-SRCS			=	ft_strlen.asm		ft_strcpy.asm \
-					ft_strcmp.asm
+SRCS			=	ft_strlen.s			ft_strcpy.s \
+					ft_strcmp.s			ft_write.s \
+					ft_read.s			ft_strdup.s
 SRCS			:=	$(addprefix $(SRCSDIR), $(SRCS))
-OBJS			=	$(patsubst %.asm,%.o,$(SRCS))
+OBJS			=	$(patsubst %.s,%.o,$(SRCS))
 
 CCFLAGS			=	-Wall -Wextra -Werror
 
-%.o:				%.asm
+%.o:				%.s
 					nasm -fmacho64 $<
 
 .c.o:
@@ -29,6 +30,12 @@ _test:				$(NAME)
 
 test:				_test
 					@ $(MAINDIR)test
+
+test_read:			_test
+					@ $(MAINDIR)test srcs/ft_strlen.s 1000
+
+test_read_stdin:	_test
+					@ $(MAINDIR)test stdin
 
 clean:				
 					rm -f $(OBJS)

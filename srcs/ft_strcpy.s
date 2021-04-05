@@ -4,8 +4,6 @@ section		.text
 _ft_strcpy:
 	
 	push	rcx
-	push	rdi
-	push	rsi
 	push	dx
 
 	xor		rcx, rcx
@@ -22,8 +20,6 @@ return:
 	mov 	rax, rdi
 
 	pop		dx
-	pop		rsi
-	pop		rdi
 	pop		rcx
 
 	ret
