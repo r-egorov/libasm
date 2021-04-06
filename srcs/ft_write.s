@@ -1,8 +1,7 @@
-global		_ft_write
-
 section		.text
-
+	global	_ft_write
 	extern	___error
+
 	test	rax, rax
 	
 _ft_write:
@@ -15,7 +14,6 @@ _ft_write:
 	ret
 
 error:
-	
 	push	rax
 	call	___error
 	pop		rcx

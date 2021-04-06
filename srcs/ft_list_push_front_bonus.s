@@ -1,25 +1,24 @@
-global		_ft_list_push_front
-
 section		.text
-	extern		_malloc
+	global	_ft_list_push_front
+	extern	_malloc
 
 _ft_list_push_front:
-	push		rdx
-	push		rdi
-	push		rsi
+	push	rdx
+	push	rdi
+	push	rsi
 
-	mov			rdi, 16
-	call		_malloc
+	mov		rdi, 16
+	call	_malloc
 
-	pop			rsi
-	pop			rdi
+	pop		rsi
+	pop		rdi
 
-	mov			[rax], rsi
+	mov		[rax], rsi
 
-	mov			rdx, [rdi]
-	mov			[rax + 8], rdx 
+	mov		rdx, [rdi]
+	mov		[rax + 8], rdx 
 
-	mov			[rdi], rax
+	mov		[rdi], rax
 
-	pop			rdx
+	pop		rdx
 	ret

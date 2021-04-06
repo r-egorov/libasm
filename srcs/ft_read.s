@@ -1,8 +1,7 @@
-global		_ft_read
-
 section		.text
-
+	global		_ft_read
 	extern	___error
+
 	test	rax, rax
 	
 _ft_read:

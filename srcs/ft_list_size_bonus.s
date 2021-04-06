@@ -1,24 +1,24 @@
 section		.text
-global		_ft_list_size
+	global	_ft_list_size
 
 _ft_list_size:
-	push		rsi
+	push	rsi
 
-	xor			rax, rax
+	xor		rax, rax
 
 loop:
-	cmp			rdi, 0
-	je			return
+	cmp		rdi, 0
+	je		return
 
-	mov			rsi, [rdi + 8]
-	inc			rax
+	mov		rsi, [rdi + 8]
+	inc		rax
 
-	cmp			rsi, 0
-	je			return
+	cmp		rsi, 0
+	je		return
 
-	mov			rdi, [rdi + 8]
-	jmp			loop
+	mov		rdi, [rdi + 8]
+	jmp		loop
 
 return:
-	pop			rsi
+	pop		rsi
 	ret
