@@ -6,7 +6,7 @@
 /*   By: cisis <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:57:39 by cisis             #+#    #+#             */
-/*   Updated: 2021/04/05 16:48:20 by cisis            ###   ########.fr       */
+/*   Updated: 2021/04/06 12:32:30 by cisis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string.h>
 # include <errno.h>
 # include <fcntl.h>
-# include "libasm.h"
+# include "libasm_bonus.h"
 
 # define DELIMITER "+----------------------+\n"
 # define BUFFER_SIZE 100000
@@ -29,5 +29,6 @@ int		execute_strdup_test(void);
 int		execute_strlen_test(void);
 int		execute_write_test(void);
 int		execute_read_test(int argc, char **argv);
+int		execute_list_test(void);
 
 #endif

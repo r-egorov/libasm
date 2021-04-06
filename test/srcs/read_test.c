@@ -6,7 +6,7 @@
 /*   By: cisis <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 15:58:39 by cisis             #+#    #+#             */
-/*   Updated: 2021/04/05 16:47:29 by cisis            ###   ########.fr       */
+/*   Updated: 2021/04/06 12:24:34 by cisis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ int				execute_read_test(int argc, char **argv)
 	read_stdin_test();
 	if (argc == 3)
 		read_file_test(argv[1], atoi(argv[2]));
-	printf("=======================\n");
+	printf("=======================\n\n");
 	return (0);
 }

@@ -6,11 +6,13 @@ SRCSDIR			=	srcs/
 LIBASMNAME		=	libasm.a
 LIMASMDIR		=	../
 LIBASM			:=	$(addprefix $(LIBASMDIR), $(LIBASMNAME))
+LIBASMHDR		=	libasm_bonus.h
+LIBASMHDR		:=	$(addprefix $(INCLUDES), $(LIMASMHDR))
 
 SRCS			=	write_test.c 	read_test.c\
 					strcmp_test.c	strcpy_test.c \
 					strdup_test.c	strlen_test.c \
-					main.c
+					list_test.c		main.c
 
 SRCS			:=	$(addprefix $(SRCSDIR), $(SRCS))
 OBJS			=	$(patsubst %.c,%.o,$(SRCS))
@@ -23,9 +25,9 @@ CCFLAGS			=	-Wall -Wextra -Werror
 all:				$(NAME)
 
 $(LIBASM):
-					make -C ..
+					make bonus -C ..
 
-$(NAME):			$(OBJS) $(LIBASM)
+$(NAME):			$(LIBASMHDR) $(OBJS) $(LIBASM)
 					gcc $(CCFLAGS) -I$(INCLUDES) -L.. -lasm $(OBJS) -o $(NAME)
 
 clean:				

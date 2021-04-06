@@ -6,7 +6,7 @@
 /*   By: cisis <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/05 16:00:51 by cisis             #+#    #+#             */
-/*   Updated: 2021/04/05 16:39:13 by cisis            ###   ########.fr       */
+/*   Updated: 2021/04/06 12:25:18 by cisis            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ int				execute_write_test(void)
 	fd = open("file_to_write", O_WRONLY | O_CREAT, 0666);
 	write_test(fd, "THIS FILE IS CREATED DURING TESTS "
 					"AND TEXT IS WRITTEN BY FT_WRITE", 65);
-	printf("=======================\n");
+	printf("=======================\n\n");
 	return (0);
 }
